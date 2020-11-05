@@ -3,17 +3,16 @@
 
 import json
 from datetime import datetime
-from flask import Flask, session, redirect, render_template, request
+
 import flask
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask import Flask, session, redirect, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import flask_admin
 from flask_admin.contrib.sqla import ModelView
-
+from werkzeug.security import generate_password_hash, check_password_hash
 #from flask_migrate import Migrate
 
 import forms
-
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
