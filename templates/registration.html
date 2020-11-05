@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block container %}
+
+<h1>Регистрация</h1>
+
+{{error_msg}}
+
+<form method="POST">
+
+    {{ form.hidden_tag() }}
+
+    {{ form.email.label }}
+    {{ form.email() }}
+
+    {{ form.password.label }}
+    {{ form.password() }}
+
+    <button type="submit">Зарегистрироваться</button>
+</form>
+
+{% endblock %}
+

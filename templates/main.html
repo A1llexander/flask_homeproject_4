@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block container %}
+<main class="container mt-3">
+  {% include 'subtitle.html' %}
+    {% for category in categories %}
+      <section>
+      <h3 class="my-4">{{ category.title }}</h3>
+      <div class="row mt-4">
+        {% for meal in meals %}
+          {% if meal.category == category.id %}
+            <div class="col-12 col-md-4">
+              <div class="card mb-3">
+                <img src="\static\pictures\{{ meal.picture }}" width="300" height="200" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h4 class="h5 card-title">{{ meal.title }}</h4>
+                  <p class="card-text">{{ meal.description }}</p>
+                 <form  class="btn btn-danger" method="POST">
+                  <input class="form-control" type="hidden" name="meal_id" value="{{ meal.id }}">
+                  <input type="submit" class="btn btn-danger" value="В корзину">
+                 </form>
+                </div>
+              </div>
+            </div>
+          {% endif%}
+        {% endfor %}
+      </div>
+      </section>
+    {% endfor %}
+</main>
+{% endblock %}
