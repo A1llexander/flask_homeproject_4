@@ -10,12 +10,13 @@ from flask_sqlalchemy import SQLAlchemy
 import flask_admin
 from flask_admin.contrib.sqla import ModelView
 from werkzeug.security import generate_password_hash, check_password_hash
-#from flask_migrate import Migrate
+from flask_migrate import Migrate
 
 import forms
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 admin = flask_admin.Admin(app)
 
 app.secret_key = "randomstring"
