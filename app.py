@@ -83,7 +83,7 @@ admin.add_view(ModelView(Category, db.session))
 admin.add_view(ModelView(Meal, db.session))
 admin.add_view(ModelView(Order, db.session))
 
-db.create_all()
+# db.create_all()
 #
 # with open('data.json', 'r', encoding='utf-8') as f:
 #     data = json.load(f)
