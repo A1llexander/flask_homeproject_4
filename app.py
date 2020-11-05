@@ -16,7 +16,7 @@ import forms
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+# migrate = Migrate(app, db)
 admin = flask_admin.Admin(app)
 
 app.secret_key = "randomstring"
